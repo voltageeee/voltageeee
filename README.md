@@ -5,17 +5,17 @@
 #include <iostream>
 #include <ctime>
 
-using namespace std;
-
 struct me {
     const char* name = "ilya";
     int age = 15;
+    double daystillbday;
 };
 
 int main() {
     time_t now;
     time_t birthday;
     struct tm birthday_date;
+    me ilya;
 
     time(&now);
 
@@ -29,7 +29,9 @@ int main() {
 
     birthday = mktime(&birthday_date);
 
-    std::cout << "Days left till my birthday: " << difftime(birthday, now)  / (60 * 60 * 24) << std::endl;
+    ilya.daystillbday = difftime(birthday, now)  / (60 * 60 * 24);
+
+    std::cout << "Days left till my birthday: " << ilya.daystillbday << std::endl;
 
     return 0;
 }
