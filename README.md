@@ -30,7 +30,7 @@ int main() {
 
     birthday = mktime(&birthday_date);
 
-    std::cout << "Days left to my birthday: " << difftime(birthday, now)  / (60 * 60 * 24) << std::endl;
+    std::cout << "Days left till my birthday: " << difftime(birthday, now)  / (60 * 60 * 24) << std::endl;
 
     return 0;
 }
