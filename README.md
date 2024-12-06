@@ -1,5 +1,37 @@
 <h1 align="center">Hi, I'm Ilya</h1>
 <h3 align="center">A self-taught pseudodev from Germany</h3>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://golang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="go" width="40" height="40"/> </a><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.nginx.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="nginx" width="40" height="40"/> </a> <a href="https://redis.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis" width="40" height="40"/> </a> </p>
+```
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+struct me {
+    const char* name = "ilya";
+    int age = 15;
+};
+
+int main() {
+    time_t now;
+    time_t birthday;
+    struct tm birthday_date;
+    me ilya;
+
+    time(&now);
+
+    birthday_date.tm_year = 2025 - 1900;
+    birthday_date.tm_mon = 0;
+    birthday_date.tm_mday = 31;
+    birthday_date.tm_hour = 12;
+    birthday_date.tm_min = 30;
+    birthday_date.tm_sec = 1;
+    birthday_date.tm_isdst = -1;
+
+    birthday = mktime(&birthday_date);
+
+    std::cout << "Days left to my birthday: " << difftime(birthday, now)  / (60 * 60 * 24) << std::endl;
+
+    return 0;
+}
+```
