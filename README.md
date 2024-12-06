@@ -16,7 +16,6 @@ int main() {
     time_t now;
     time_t birthday;
     struct tm birthday_date;
-    me ilya;
 
     time(&now);
 
